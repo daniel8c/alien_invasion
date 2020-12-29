@@ -14,8 +14,8 @@ class Alien(Sprite):
         self.screen_rect = ai_game.screen.get_rect()
         self.settings = ai_game.settings
 
-        # Wczytanie obrazu statku kosmicznego i pobranie jego prostokąta
-        self.image = pygame.image.load(r'images/alien.bmp')
+        # Wczytanie obrazu obcego i pobranie jego prostokąta
+        self.image = pygame.image.load(r'images/alien.png')
         self.rect = self.image.get_rect()
 
         # Obcy pojawia się na górze po lewej stronie ekranu
