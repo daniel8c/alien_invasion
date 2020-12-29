@@ -1,10 +1,12 @@
 import pygame
 from pygame.sprite import Sprite
 
+
+
 class Bullet(Sprite):
     '''Klasa przeznaczona do zarządzania pociskami wystrzeliwanymi przez statek'''
 
-    def __init__(self,ai_game):
+    def __init__(self, ai_game):
         ''' Utwożenie obiektu pocisku w aktualnym położeniu statku'''
 
         super().__init__()
@@ -13,7 +15,7 @@ class Bullet(Sprite):
         self.color = self.settings.bullet_color
 
         # Utworzenie prostokąta pocisku w punkcie (0,0), a następnie zdefiniowanie dla niego odpowiedniego położenia
-        self.rect = pygame.Rect(0,0,self.settings.bullet_width, self.settings.bullet_height)
+        self.rect = pygame.Rect(0, 0, self.settings.bullet_width, self.settings.bullet_height)
         self.rect.midtop = ai_game.ship.rect.midtop
 
         # Położenie pocisku jest zdefiniowane za pomocą wartości zmiennoprzecinkowej
@@ -30,4 +32,4 @@ class Bullet(Sprite):
 
     def draw_bullet(self):
         ''' Wyświetlanie prostokąta na ekranie'''
-        pygame.draw.rect(self.screen,self.color,self.rect)
+        pygame.draw.rect(self.screen, self.color, self.rect)

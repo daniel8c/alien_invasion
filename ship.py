@@ -1,7 +1,6 @@
 import pygame
 
 
-
 class Ship:
     ''' Klasa przeznaczona do zarządzania statkiem '''
 
@@ -25,6 +24,7 @@ class Ship:
         # Opcje wskazujące na poruszanie się statku
         self.moving_right = False
         self.moving_left = False
+
     def update(self):
         ''' Uaktualnienie poruszania się statku na podstawie opcji wskazującej na jego ruch. '''
         if self.moving_right and self.rect.right < self.screen_rect.right:

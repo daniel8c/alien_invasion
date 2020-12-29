@@ -1,6 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
+
 class Alien(Sprite):
     ''' Klasa przedstawiająca pojedynczego obcego we flocie'''
 
@@ -23,5 +24,12 @@ class Alien(Sprite):
         # Położenie poziome jest przechowywane w postaci liczby zmiennoprzcinkowej
         self.x = float(self.rect.x)
 
+    def check_edges(self):
+        screen_rect = self.screen.get_rect()
+        if self.rect.right >= screen_rect.right or self.rect.left <= screen_rect.left:
+            return True
 
-
+    def update(self):
+        ''' Przesunięcie ibcego w prawo lub w lewo. '''
+        self.x += (self.settings.alien_speed * self.settings.fleet_direction)
+        self.rect.x = self.x
