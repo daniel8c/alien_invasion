@@ -4,10 +4,10 @@ import random
 
 
 class Star(Sprite):
-    ''' Klasa przedstawiająca gwiazdę'''
+    """ A class representing a star."""
 
     def __init__(self, ai_game):
-        ''' Inicjalizacja gwizdy i zdefiniowanie jej położenia początkowego. '''
+        """ Star initialization and definition of its initial position. """
 
         super().__init__()
 
@@ -15,24 +15,24 @@ class Star(Sprite):
         self.screen_rect = ai_game.screen.get_rect()
         self.settings = ai_game.settings
 
-        # Wczytanie obrazu gwiazdy i pobranie jej prostokąta
+        # Loads the star image and retrieves its rectangle
         self.image = pygame.image.load(r'images/star_2.svg')
         self.rect = self.image.get_rect()
 
-        # gwiazda pojawi się na górze ekranu w wylosowanym miejscu
+        # A star will appear at the top of the screen in the randomized location
         self.screen_rect.x = random.randint(0, self.screen_rect.width)
         self.screen_rect.y = 0
 
-        # Położenie poziome jest przechowywane w postaci liczby zmiennoprzcinkowej
+        # The horizontal and vertical position is stored as a floating point number
         self.x = float(self.screen_rect.x)
         self.y = float(self.screen_rect.y)
 
     def update(self):
-        '''Poruszanie się gwiazdy po ekranie'''
+        """ Movement of the star on the screen. """
 
-        # Uaktualnienie położenia pocisku
+        # Update bullet position
         self.y += self.settings.stars_speed
 
-        # Uaktualnienie położenia prostokąta pocisku
+        # Updating the position of the bullet rectangle
         self.rect.y = self.y
         self.rect.x = self.x
