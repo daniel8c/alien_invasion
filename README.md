@@ -1,4 +1,4 @@
-# alien_invasion
+# Alien Invasion
 My first simple 2d game
 
 ## Control
